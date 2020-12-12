@@ -3,20 +3,42 @@ const userInput = prompt('seu nome:') // document.querySelector('input[name=user
 const messageInput = document.querySelector('#chat input'); 
 const containerMessage = document.querySelector('.Messages');
 
-// const open = document.getElementById('sideBar');
-// const cont = document.querySelector('.container');
-// const painel = document.querySelector('.tableLeft');
-// const close = document.getElementById('sideBarClose');
+const open = document.getElementById('sideBar');
+const cont = document.querySelector('.container');
+const painel = document.querySelector('.tableLeft');
+const close = document.getElementById('sideBarClose');
 
-// close.addEventListener('click', () => {
-//     cont.classList.remove('show');
-//     painel.style.left = '-500px';
-// })
+close.addEventListener('click', () => {
+    cont.classList.remove('show');
+    cont.style.pointerEvents = 'auto';
+    painel.style.left = '-500px';
+})
 
-// open.addEventListener('click', () => {
-//     cont.classList.add('show');
-//     painel.style.left = '0px';
-// })
+open.addEventListener('click', () => {
+    cont.classList.add('show');
+    cont.style.pointerEvents = 'none';
+    painel.style.left = '0px';
+})
+
+const open1 = document.getElementById('nameUser');
+const painel1 = document.querySelector('.tableRight');
+const close1 = document.querySelector('#sideBarClose1');
+
+close1.addEventListener('click', () => {
+    cont.classList.remove('show');
+    cont.style.pointerEvents = 'auto';
+    painel1.style.height = '230px';
+    painel1.style.width = '230px';
+    painel1.style.opacity = '0';
+})
+
+open1.addEventListener('click', () => {
+    cont.classList.add('show');
+    cont.style.pointerEvents = 'none';
+    painel1.style.height = '260px';
+    painel1.style.width = '260px';
+    painel1.style.opacity = '1';
+})
 
 var socket = io('https://web-chat-app-v01.herokuapp.com/')
 

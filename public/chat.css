@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: whitney-bold;
-    src: url('fonts/whitney-bold.otf');
+    src: url('../fonts/whitney-bold.otf');
 }
 
 @font-face {
     font-family: whitney-light;
-    src: url('fonts/whitney-medium.otf');
+    src: url('../fonts/whitney-medium.otf');
 }
 
 * {
@@ -58,32 +58,54 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin: 2px;
-    /* color: #72757e; */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     color: #7f5af0;
     margin: 0px;
 }
 
 .container .nameChat button {
-    display: none;
+    /*display: none;*/
 
     margin: 0;
     padding: 0;
     cursor: pointer;
-    position: absolute;
-    left: 0px;
+    /*position: absolute;*/
+    /*left: 0px;*/
     outline: none;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
     background-color: transparent;
     border: none;
+}
+
+.container .nameChat #nameUser {
+    position: absolute;
+    right: 0px;
+    margin-right: 20px;
+}
+
+.container .nameChat #sideBar {
+    position: absolute;
+    left: 0px;
+    margin-left: 20px;
 }
 
 .container .nameChat button:active {
     transform: scale(1.03);
 }
 
+.container .nameChat button i:hover {
+    color: #9276e8;
+}
+
 .container .nameChat button i {
     margin: 0;
     padding: 0;
+    transition: color 0.7s ease;
     font-size: 30px;
     color: #7f5af0;
 }
@@ -105,6 +127,90 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.tableRight {
+    background-color: #242629;
+
+    transition: all 0.3s linear;
+
+    z-index: 3;
+    position: fixed;
+
+    /*right: -500px;*/
+    /*top: 0;*/
+
+    width: 260px;
+    height: 260px;
+    opacity: 1;
+    /*margin-top: 70px;*/
+    /*margin-right: 20px;*/
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tableRight #sideBarClose1 {
+    width: 29px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.tableRight input {
+    border: none;
+    border-radius: 8px;
+    margin: 4px;
+    text-align: center;
+    background-color: #d1d1d1;
+    font-size: 15px;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    padding: 4px;
+    padding-bottom: 6px;
+}
+
+.tableRight input::placeholder {
+    color: #282828;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.tableRight #usernameBtn {
+    margin: 4px;
+    padding-bottom: 2px;
+    background-color: #7f5af0;
+    outline: none;
+    font-weight: bold;
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+}
+
+.tableRight button i {
+    color: #7f5af0;
+    transition: color 0.7s ease;
+    font-size: 25px;
+}
+
+.tableRight button:active {
+    transform: scale(1.03);
+}
+
+.tableRight button i:hover {
+    color: #9276e8;
 }
 
 .tableLeft h1{
@@ -211,6 +317,7 @@ body {
 
 .container.show {
     opacity: 0.3;
+    filter: blur(1px);
 }
 
 .background {
@@ -364,6 +471,10 @@ body {
     float: right;
 }
 
+.Message.Your p{
+    background-color: #9276e8;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -423,13 +534,23 @@ body {
     .container .nameChat button {
         margin: 0;
         padding: 0;
-        position: absolute;
-        left: 0px;
+/*        position: absolute;
+        left: 0px;*/
         outline: none;
-        margin-left: 20px;
+        /*margin-left: 20px;*/
         background-color: transparent;
         border: none;
     }
+/*
+    .tableRight {
+        position: absolute;
+        left: unset;
+        top: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }*/
+
     
     .container .nameChat button i {
         margin: 0;
