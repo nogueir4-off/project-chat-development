@@ -9,6 +9,7 @@ const painel = document.querySelector('.tableLeft');
 const close = document.getElementById('sideBarClose');
 const imgProfile = document.getElementById('imgProfile');
 const btnUpdateName = document.getElementById('usernameBtn');
+const form = document.querySelector('.tableRight form')
 
 window.onload = genIcon();
 
@@ -36,6 +37,15 @@ btnUpdateName.addEventListener('click', () => {
 		painel1.style.opacity = '0';
 
 		userInput = input1.value;
+	}
+})
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	if (input1.value) { 
+    	cont.classList.remove('show');
+    	cont.style.pointerEvents = 'auto';
+		painel1.style.opacity = '0';
 	}
 })
 
@@ -110,6 +120,6 @@ function genIcon() {
 		seed += gen
 	}
 
-	url = `https://avatars.dicebear.com/4.5/api/identicon/:${seed}.svg?&background=%237f5af0`
+	url = `https://avatars.dicebear.com/4.5/api/gridy/:${seed}.svg?&background=%237f5af0&m=5`
 	imgProfile.src = url;
 }
