@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 @font-face {
     font-family: whitney-bold;
@@ -132,7 +132,7 @@ body {
 .tableRight {
     background-color: #242629;
 
-    transition: all 0.3s linear;
+    transition: all 0.3s ease;
 
     z-index: 3;
     position: fixed;
@@ -170,8 +170,13 @@ body {
     border: none;
     border-radius: 8px;
     margin: 4px;
+    margin-bottom: 13px;
     text-align: center;
-    background-color: #d1d1d1;
+    font-weight: 600;
+    /* background-color: #d1d1d1; */
+    transition: all 0.5s ease;
+    background-color: #2b2e31;;
+    color: #d1d1d1;
     font-size: 15px;
     outline: none;
     width: 200px;
@@ -181,10 +186,15 @@ body {
 }
 
 .tableRight input::placeholder {
-    color: #282828;
+    color: #5c5c5c;
     text-align: center;
     font-weight: 600;
     font-size: 15px;
+}
+
+.tableRight input:focus {
+    color: #2b2b2b;
+    background-color: #9c9c9c;
 }
 
 .tableRight #usernameBtn {
@@ -192,9 +202,12 @@ body {
     padding-bottom: 2px;
     background-color: #7f5af0;
     outline: none;
+    transition: background-color 0.7s ease;
     font-weight: bold;
+    cursor: pointer;
     width: 200px;
-    height: 30px;
+    height: 33px;
+    letter-spacing: 0.6px;
     border: none;
     border-radius: 8px;
 }
@@ -209,8 +222,27 @@ body {
     transform: scale(1.03);
 }
 
+.tableRight #sideBarClose1:active {
+    transform: rotate(315deg);
+}
+
 .tableRight button i:hover {
     color: #9276e8;
+}
+
+.tableRight #usernameBtn:hover {
+    background-color: #9276e8;
+}
+
+.tableRight img {
+    height: 95px;
+    width: 95px;
+    border: 6px solid #7f5af0;
+    padding: 1px;
+    background-color: #7f5af0;
+    /* background-color:  #5c5c5c; */
+    margin-bottom: 10px;
+    border-radius: 50%;
 }
 
 .tableLeft h1{
@@ -310,6 +342,7 @@ body {
 
 .container {
     transition: all 0.5s ease;
+    pointer-events: none;
     width: 100vw;
     height: 100vh;
     opacity: 1;
@@ -321,7 +354,7 @@ body {
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left:0;
     background-color: #16161a;
@@ -334,7 +367,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
 
     bottom: 0px;
     left: 0px;
@@ -378,6 +411,7 @@ body {
     margin-bottom: -18px;
     margin-right: 1px;
     background-color:#242629;
+    color: #e6e6e6;
     border: 1px solid black;
 }
 
@@ -420,7 +454,6 @@ body {
     padding: 15px;
     border-radius: 10px;
     color: #e6e6e6;
-    /*color: #d1d1d1;*/
 
     min-width: 80px;
     max-width: 400px;
@@ -438,10 +471,6 @@ body {
     word-wrap: break-word;
 
     -ms-word-break: break-word;
-/*    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;*/
 }
 
 .Message .nick {

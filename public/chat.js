@@ -1,5 +1,5 @@
 const chat = document.getElementById('chat');
-const userInput = prompt('seu nome:') // document.querySelector('input[name=username]'); 
+var userInput;//prompt('seu nome:') // document.querySelector('input[name=username]'); 
 const messageInput = document.querySelector('#chat input'); 
 const containerMessage = document.querySelector('.Messages');
 
@@ -7,6 +7,10 @@ const open = document.getElementById('sideBar');
 const cont = document.querySelector('.container');
 const painel = document.querySelector('.tableLeft');
 const close = document.getElementById('sideBarClose');
+const imgProfile = document.getElementById('imgProfile');
+const btnUpdateName = document.getElementById('usernameBtn');
+
+window.onload = genIcon();
 
 close.addEventListener('click', () => {
     cont.classList.remove('show');
@@ -23,20 +27,29 @@ open.addEventListener('click', () => {
 const open1 = document.getElementById('nameUser');
 const painel1 = document.querySelector('.tableRight');
 const close1 = document.querySelector('#sideBarClose1');
+const input1 = document.querySelector('.tableRight input')
+
+btnUpdateName.addEventListener('click', () => {
+	if (input1.value) { 
+    	cont.classList.remove('show');
+    	cont.style.pointerEvents = 'auto';
+		painel1.style.opacity = '0';
+
+		userInput = input1.value;
+	}
+})
 
 close1.addEventListener('click', () => {
-    cont.classList.remove('show');
-    cont.style.pointerEvents = 'auto';
-    painel1.style.height = '230px';
-    painel1.style.width = '230px';
-    painel1.style.opacity = '0';
+	if (input1.value) { 
+    	cont.classList.remove('show');
+    	cont.style.pointerEvents = 'auto';
+		painel1.style.opacity = '0';
+	}
 })
 
 open1.addEventListener('click', () => {
     cont.classList.add('show');
     cont.style.pointerEvents = 'none';
-    painel1.style.height = '260px';
-    painel1.style.width = '260px';
     painel1.style.opacity = '1';
 })
 
@@ -88,3 +101,15 @@ chat.addEventListener('submit', function(event) {
 	containerMessage.scrollTop = containerMessage.scrollHeight - containerMessage.clientHeight;
 	messageInput.value = "";
 })
+
+function genIcon() {
+	letters = 'abcdefghijklmnopqrstuvwxyz0123456789'; //36
+	seed = '';
+	for(i=0; i < 8; i++) {
+		gen = letters[Math.floor(Math.random() * 35)]
+		seed += gen
+	}
+
+	url = `https://avatars.dicebear.com/4.5/api/identicon/:${seed}.svg?&background=%237f5af0`
+	imgProfile.src = url;
+}
