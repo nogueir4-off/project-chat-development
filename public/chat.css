@@ -223,7 +223,8 @@ body {
 }
 
 .tableRight #sideBarClose1:active {
-    transform: rotate(315deg);
+    /* transform: rotate(315deg); */
+    transform: scale(0.90);
 }
 
 .tableRight button i:hover {
